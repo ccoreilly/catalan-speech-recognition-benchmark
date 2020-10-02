@@ -1,24 +1,24 @@
-
-  
 # Catalan Speech Recognition Benchmark
 
 There are not many speech recognition engines/models for the Catalan language. This benchmark aims to collect and compare the available models and serve as reference for projects willing to include catalan speech recognition.
 
 ## Table of contents
-  - [Test data](#test-data)
-  - [Metrics](#metrics)
-    - [Word error rate](#word-error-rate)
-    - [Real-time factor](#real-time-factor)
-  - [Models / Engines](#models--engines)
-    - [Col·lectivaT CMUSphinx v0.4.0](#collectivat-cmusphinx-v040)
-    - [deepspeech-català v0.7.0](#deepspeech-català-v070)
-    - [vosk-model-small-ca-0.4](#vosk-model-small-ca-04)
-    - [Google Speech-To-Text](#google-speech-to-text)
-  - [Results](#results)
+
+- [Test data](#test-data)
+- [Metrics](#metrics)
+  - [Word error rate](#word-error-rate)
+  - [Real-time factor](#real-time-factor)
+- [Models / Engines](#models--engines)
+  - [Col·lectivaT CMUSphinx v0.4.0](#collectivat-cmusphinx-v040)
+  - [deepspeech-català v0.7.0](#deepspeech-català-v070)
+  - [vosk-model-small-ca-0.4](#vosk-model-small-ca-04)
+  - [Google Speech-To-Text](#google-speech-to-text)
+- [Results](#results)
 
 ## Test data
 
 Two datasets have been initially used to benchmark the different models:
+
 - The test set of the Common Voice dataset from June 2020 ([ca_579h_2020-06-22](https://commonvoice.mozilla.org/en/datasets))
 - The crowdsourced high-quality Catalan speech data set (https://www.openslr.org/69/)
 
@@ -37,6 +37,7 @@ Defined as the ratio of the [Levenshtein distance](https://en.wikipedia.org/wiki
 The ratio of the recognition response time to the audio length. The smaller the ratio, the faster it takes to infer speech. This is not considered for cloud-based recognition engines.
 
 As this metric depends on the hardware the model runs, all tests have been executed sequentially on the same machine, an AWS g4dn.xlarge instance:
+
 - 4 vCPU (2nd Generation Intel Xeon Scalable (Cascade Lake) processors)
 - 16 GiB Memory
 - NVIDIA T4 Tensor Core GPU (16 GiB GPU Mem)
@@ -65,7 +66,8 @@ A [Vosk-API](https://alphacephei.com/vosk/) compatible lightweight wideband [mod
 
 ### Google Speech-To-Text
 
-The speech recognition service offered by [Google](https://cloud.google.com/speech-to-text).
+The speech recognition service offered by [Google](https://cloud.google.com/speech-to-text). As google converts numbers
+and time to their numerical representation (quite well) but the original test data represents them textually, a semi-automatic post-processing step is done before calculating the WER.
 
 ## Results
 
@@ -76,7 +78,7 @@ The speech recognition service offered by [Google](https://cloud.google.com/spee
 | Col·lectivaT CMUSphinx v0.4.0 | 45,89% | 0,69 | 106 MB     |
 | deepspeech-català v0.7.0      | 21,70% | 0,18 | 233 MB     |
 | vosk-model-small-ca-0.4       | 11,47% | 0,04 | 91 MB      |
-| Google Speech-To-Text         | TBD    | N/A  | N/A        |
+| Google Speech-To-Text         | 10,97% | N/A  | N/A        |
 
 ### Common Voice June 2020 Test dataset
 
