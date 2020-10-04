@@ -2,18 +2,23 @@
 
 There are not many speech recognition engines/models for the Catalan language. This benchmark aims to collect and compare the available models and serve as reference for projects willing to include catalan speech recognition.
 
-## Table of contents
+## Table of Contents
 
 - [Test data](#test-data)
 - [Metrics](#metrics)
-  - [Word error rate](#word-error-rate)
-  - [Real-time factor](#real-time-factor)
+  - [Word error rate (WER)](#word-error-rate-wer)
+  - [Real-time factor (RTF)](#real-time-factor-rtf)
+  - [Model size](#model-size)
 - [Models / Engines](#models--engines)
   - [Col·lectivaT CMUSphinx v0.4.0](#collectivat-cmusphinx-v040)
   - [deepspeech-català v0.7.0](#deepspeech-català-v070)
   - [vosk-model-small-ca-0.4](#vosk-model-small-ca-04)
   - [Google Speech-To-Text](#google-speech-to-text)
+  - [Azure Cognitive Services](#azure-cognitive-services)
 - [Results](#results)
+  - [Crowdsourced google dataset](#crowdsourced-google-dataset)
+  - [Common Voice June 2020 Test dataset](#common-voice-june-2020-test-dataset)
+- [Notes](#notes)
 
 ## Test data
 
